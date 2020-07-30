@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      <h:head>
+        <title>Formulario De Matricula</title>
+    </h:head>
+    <h:body>
+        <h2>Formulario Matrícula</h2>
+         <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="email" value="Dirección e-mail:"/>
+                <h:inputText id="email" label="Dirección e-mail" required="true" value="#{formularioBean.email}">
+                <f:validateLength maximum="21"/>
+                </h:inputText>
+                <h:message for="email" style="color:red"/>
+             
+               <h:outputLabel for="tecnologias" value="Tecnologías Java de interes:"/>
+               <h:selectManyCheckbox id="tecnologias" label="Tecnologías Java de interes" required="true" value="#{formularioBean.tecnologias}">
+                  <f:selectItem itemLabel="Servlets y JSP" itemValue="Servlets y JSP"/>
+                  <f:selectItem itemLabel="Struts" itemValue="Struts"/>
+                  <f:selectItem itemLabel="JSF" itemValue="JSF"/>  
+                  <f:selectItem itemLabel="JPA" itemValue="JPA"/>  
+                </h:selectManyCheckbox>
+                <h:message for="tecnologias" style="color:red"/>
+             
+                <h:commandButton action="Consultar" value="Enviar" />
+                
+            </h:panelGrid>
+         </h:form>
+    </h:body>
+</html>
+
